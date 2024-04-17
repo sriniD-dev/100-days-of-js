@@ -99,4 +99,43 @@ function snake_case(str){
 console.log(mutateString("hello world"))
 console.log(snake_case("The sun dipped below the horizon painting the sky in hues of orange and pink."));
 
+//day-21
+// write a function called calculatedMen that takes an array of numbers as input and returns the mean (average) of those numbers
+
+// ToDo::: In math,the mean is the average of a set of numbers, or the numeric value that represents the center of collection of numbers.
+// method-1
+function calculatedMean(arr){
+    if(arr.length===0){
+        console.log("length is zero")
+        return 0
+    }else {
+        let numAvg=arr.reduce((acc,cur)=>acc+cur)
+        console.log((numAvg/arr.length),numAvg,"avergae-mean")
+        return numAvg/(arr.length)
+    }
+}
+
+console.log(calculatedMean([1,2,3,4,5]))
+console.log(calculatedMean([10,20,30]))
+console.log(calculatedMean([-1,0,1]))
+console.log(calculatedMean([-1,0,1,0,-10]))
+console.log(calculatedMean([]))
+
+const avgMean=(arr)=>{
+    if(arr.length==0){
+        return 0
+    }else {
+        let acc=0
+      arr.forEach((element,index,arr) => {
+        console.log(element,"element")
+           acc=acc+element
+        });
+        console.log((acc/(arr.length)),acc,arr.length,"<----average-mean---->")
+        return acc/(arr.length)
+    }
+}
+
+console.log(avgMean([10,20,30]))
+console.log(avgMean([-1,0,1,2,3]))
+console.log(avgMean([-1,0,1,0,-10]))
 
