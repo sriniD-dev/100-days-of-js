@@ -139,3 +139,24 @@ console.log(avgMean([10,20,30]))
 console.log(avgMean([-1,0,1,2,3]))
 console.log(avgMean([-1,0,1,0,-10]))
 
+// day-22
+// write a javascript function findMedian(arr) tht takes an array of numbers as input and returns the median value.if the array has even number of elements,return the average of the two middle values::so the median of 3,5,7,9 is (5+7)/2
+// if arr is 3,3,5,9,15  is 5
+
+function findMedian(arr){
+    const toSort=arr.sort((a,b)=>a-b)
+    console.log(toSort,"toSort")
+    let midValue=Math.floor(arr.length/2)
+    console.log(Math.floor(midValue),midValue,"midValue")
+    if((arr.length%2)===0){ //even array
+        console.log("median---",arr[midValue],arr[midValue-1],((arr[midValue]+arr[midValue-1])/2))
+        return median =((arr[midValue-1]+arr[midValue])/2)
+    }else {
+        console.log("median---",arr[midValue])
+        return median=arr[midValue]
+    }
+}
+
+console.log(findMedian([3,5,9,2,15]))
+console.log(findMedian([3,5,7,9]))
+console.log(findMedian([1,3,5,7,9,11,-1,-11,-12,0]))
